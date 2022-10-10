@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class EnemyManager : MonoBehaviour
 {
     public int defaultPlanes = 10;
     public GameObject plane; //blueprint for planes = prefab
+    public int enemyCount;
+    public TextMeshProUGUI enemyText;
 
     // Start is called before the first frame update
     void Start()
@@ -37,4 +41,11 @@ public class EnemyManager : MonoBehaviour
         spawnedPlane.transform.position = new Vector3(planeX, planeY, 0f);
 
     }
+
+    public void enemyDestroy()
+    {
+        enemyCount++;
+        enemyText.text = "ENEMY: Count(10) Destroyed(" + enemyCount + ")";
+    }
+
 }

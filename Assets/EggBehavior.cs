@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 // add rigid body
 // add collider
 public class EggBehavior : MonoBehaviour
 {
+    public HeroMovement eggCount;
     public float speed = 40f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,7 @@ public class EggBehavior : MonoBehaviour
     void OnBecameInvisible()
     {
         Destroy(this.gameObject);
+        eggCount.eggCount();
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -35,6 +40,6 @@ public class EggBehavior : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        
     }
+
 }

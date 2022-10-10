@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 {
     public int health = 100;
     public EnemyManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,16 +29,23 @@ public class Enemy : MonoBehaviour
             Color fadeColor = GetComponent<SpriteRenderer>().color;
             fadeColor.a = health * 0.01f;
             GetComponent<SpriteRenderer>().color = fadeColor;
+
             if(health == 0)
             {
                 Destroy(this.gameObject);
                 manager.createPlane();
+                manager.enemyDestroy();
             }
             
         }
-        else
+        else if(egg.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Tag for the egg: " + egg.gameObject.tag);
+            manager.createPlane();
+            Destroy(this.gameObject);
+            manager.enemyDestroy();
+        }
+        else 
+        {
             manager.createPlane();
             Destroy(this.gameObject);
         }
