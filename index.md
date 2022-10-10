@@ -7,6 +7,6 @@
 <body>
     <h1>Hero-Plane-Eggs Game</h1>
     <p>Here's my Github repo link: (https://github.com/bykovav8/Hero-Creation)</p>
-    <p>Here's my Github Pages link: (https://github.com/bykovav8/Hero-Creation/tree/main/build_hero_game)</p>
+    <p>Here's my Github Pages link: (https://github.com/bykovav8/Hero-Creation/build_hero_game)</p>
 </body>
 </html>
